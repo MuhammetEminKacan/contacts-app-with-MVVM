@@ -24,8 +24,7 @@ class AppModule {
     @Provides
     @Singleton
     fun provideKisilerDao(@ApplicationContext context: Context) : kisilerDao{
-        val vt = Room.databaseBuilder(context,veritabani::class.java,"rehber.sqlite")   //işleme
-            .createFromAsset("rehber.sqlite").build()  // yüklediğim veritabanı nı kopyaladım
+        val vt = Room.databaseBuilder(context,veritabani::class.java,"rehber.sqlite").build()   //işleme
         return vt.getKisilerDao()
     }
 }
